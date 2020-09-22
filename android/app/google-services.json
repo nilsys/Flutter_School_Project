@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "424413962106",
+    "firebase_url": "https://school-projects-e3e28.firebaseio.com",
+    "project_id": "school-projects-e3e28",
+    "storage_bucket": "school-projects-e3e28.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:424413962106:android:31c7435b8b6c792a3040c3",
+        "android_client_info": {
+          "package_name": "id.kauza.school"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "424413962106-k1e801q1g27d5s0sqj8nnqnd71mn6mlb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.kauza.school",
+            "certificate_hash": "ee47487e306e7d045acf48970c8944a4ed832b8d"
+          }
+        },
+        {
+          "client_id": "424413962106-gojge11ot7rtnjdpghb4juhqf7k7751p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3K34JjozD7gBcioGGbZfJsHa2WEVFOaQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "424413962106-gojge11ot7rtnjdpghb4juhqf7k7751p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
