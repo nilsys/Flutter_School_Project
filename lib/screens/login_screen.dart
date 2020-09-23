@@ -48,11 +48,12 @@ class _LoginScreenState extends State<LoginScreen> {
             width: double.infinity,
             height: MediaQuery.of(context).size.height / 2 + 50,
             decoration: BoxDecoration(
-                color: primaryColor,
-                shape: BoxShape.rectangle,
-                borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(50),
-                    bottomRight: Radius.circular(50))),
+              color: primaryColor,
+              shape: BoxShape.rectangle,
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(50),
+                  bottomRight: Radius.circular(50)),
+            ),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,

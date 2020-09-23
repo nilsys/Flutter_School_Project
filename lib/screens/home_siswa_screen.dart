@@ -79,10 +79,13 @@ class _HomeSiswaScreenState extends State<HomeSiswaScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 0,
+      ),
       body: Column(
         children: <Widget>[
           Container(
-            margin: EdgeInsets.all(25),
+            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             width: double.infinity,
             decoration: bDecoration,
             padding: EdgeInsets.all(5),
@@ -94,11 +97,21 @@ class _HomeSiswaScreenState extends State<HomeSiswaScreen> {
                   width: 110,
                   height: 110,
                   child: PieChart(
-                      dataMap: data,
-                      animationDuration: Duration(milliseconds: 800),
-                      ringStrokeWidth: 10,
-                      legendOptions: LegendOptions(
-                          showLegendsInRow: false, showLegends: false)),
+                    dataMap: data,
+                    colorList: [Hexcolor("B4FF7F"), Hexcolor("F2C94C")],
+                    animationDuration: Duration(milliseconds: 800),
+                    legendOptions: LegendOptions(
+                      showLegendsInRow: false,
+                      showLegends: false,
+                    ),
+                    chartValuesOptions: ChartValuesOptions(
+                      showChartValuesInPercentage: true,
+                      chartValueStyle: TextStyle(
+                        fontSize: 8,
+                        color: black,
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
