@@ -12,22 +12,23 @@ class BoxKotak extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 43,
-      height: 43,
       decoration: bkotak(color),
       child: Column(
         children: <Widget>[
-          Text(
-            state,
-            style: TextStyle(
-                fontFamily: "Roboto",
-                fontWeight: FontWeight.w700,
-                fontSize: 20),
+          Padding(
+            padding: const EdgeInsets.all(3.0),
+            child: Text(
+              state,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+            ),
           ),
           Text(
             title,
             style: TextStyle(
-              fontFamily: "Roboto",
-              fontSize: 11,
+              fontSize: 10,
             ),
           ),
         ],

@@ -1,9 +1,7 @@
-import 'dart:ffi';
-
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:pie_chart/pie_chart.dart';
 import 'package:school/components/components.dart';
 import 'package:school/utilities/constants.dart';
 
@@ -15,9 +13,11 @@ class HomeSiswaScreen extends StatefulWidget {
 }
 
 class _HomeSiswaScreenState extends State<HomeSiswaScreen> {
+  Map<int, bool> check = <int, bool>{};
   int total = 20;
   int masuk = 17;
   int izin = 3;
+  int touchedIndex;
 
   Map<String, double> data = {
     'masuk': 17,
@@ -53,22 +53,57 @@ class _HomeSiswaScreenState extends State<HomeSiswaScreen> {
                 BoxKotak(
                   color: "B4FF7F",
                   title: "Masuk",
-                  state: "17",
+                  state: "$masuk",
                 ),
                 Container(
                   margin: EdgeInsets.symmetric(horizontal: 20),
                   child: BoxKotak(
                     color: "6ab7ff",
                     title: "Total",
-                    state: "20",
+                    state: "$total",
                   ),
                 ),
                 BoxKotak(
                   color: "F2C94C",
                   title: "Izin",
-                  state: "3",
+                  state: "$izin",
                 ),
               ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget _kotakJam() {
+    return Container(
+      margin: EdgeInsets.all(4),
+      height: 44,
+      width: 70,
+      decoration: BoxDecoration(
+          color: primaryColor, borderRadius: BorderRadius.circular(2)),
+      child: Column(
+        children: [
+          Container(
+            margin: EdgeInsets.all(3),
+            child: Text(
+              "06:21",
+              style: TextStyle(
+                color: white,
+                fontSize: 18,
+              ),
+            ),
+          ),
+          Divider(
+            color: white,
+            height: 2,
+          ),
+          Text(
+            "Masuk",
+            style: TextStyle(
+              color: white,
+              fontSize: 10,
             ),
           )
         ],
@@ -94,42 +129,131 @@ class _HomeSiswaScreenState extends State<HomeSiswaScreen> {
               children: <Widget>[
                 __header(),
                 Container(
-                  width: 110,
-                  height: 110,
+                  height: MediaQuery.of(context).size.height / 8,
+                  width: MediaQuery.of(context).size.height / 8,
                   child: PieChart(
-                    dataMap: data,
-                    colorList: [Hexcolor("B4FF7F"), Hexcolor("F2C94C")],
-                    animationDuration: Duration(milliseconds: 800),
-                    legendOptions: LegendOptions(
-                      showLegendsInRow: false,
-                      showLegends: false,
-                    ),
-                    chartValuesOptions: ChartValuesOptions(
-                      showChartValuesInPercentage: true,
-                      chartValueStyle: TextStyle(
-                        fontSize: 8,
-                        color: black,
+                    PieChartData(
+                      pieTouchData: PieTouchData(touchCallback: (touch) {
+                        setState(() {
+                          if (touch.touchInput is FlLongPressEnd ||
+                              touch.touchInput is FlPanEnd) {
+                            touchedIndex = -1;
+                          } else {
+                            touchedIndex = touch.touchedSectionIndex;
+                          }
+                        });
+                      }),
+                      borderData: FlBorderData(
+                        show: false,
                       ),
+                      sections: _section(),
                     ),
                   ),
                 ),
               ],
             ),
           ),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                color: lightColor,
+              ),
+              margin: EdgeInsets.symmetric(
+                vertical: 10,
+                horizontal: 20,
+              ),
+              child: ListView(
+                scrollDirection: Axis.vertical,
+                children: [
+                  for (int i = 1; i <= 20; i++)
+                    Card(
+                        color: Hexcolor("#B4FF7F"),
+                        child: Row(
+                          children: [
+                            _kotakJam(),
+                            Container(
+                              height: 44,
+                              alignment: Alignment.topLeft,
+                              margin: EdgeInsets.symmetric(horizontal: 3),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "30 September",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Text(
+                                    "Status : Tepat Waktu",
+                                    style: TextStyle(),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        )),
+                ],
+              ),
+            ),
+          )
         ],
       ),
-      bottomNavigationBar:
-          BottomNavigationBar(items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-          icon: FaIcon(FontAwesomeIcons.home),
-          label: "Home",
-        ),
-        BottomNavigationBarItem(
-          icon: FaIcon(FontAwesomeIcons.heart),
-          label: "Love",
-          activeIcon: FaIcon(FontAwesomeIcons.solidHeart),
-        )
-      ], selectedItemColor: primaryColor, unselectedItemColor: black),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: FaIcon(FontAwesomeIcons.home),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: FaIcon(FontAwesomeIcons.heart),
+            label: "Love",
+            activeIcon: FaIcon(FontAwesomeIcons.solidHeart),
+          )
+        ],
+        selectedItemColor: primaryColor,
+        unselectedItemColor: black,
+      ),
     );
+  }
+
+  List<PieChartSectionData> _section() {
+    return List.generate(2, (i) {
+      final isTouch = i == touchedIndex;
+      final double radius = isTouch ? 60 : 50;
+      final double fontSize = isTouch ? 16 : 14;
+      switch (i) {
+        case 0:
+          return PieChartSectionData(
+            color: Hexcolor("B4FF7F"),
+            value: masuk.toDouble(),
+            title: '40%',
+            radius: radius,
+            titleStyle: TextStyle(
+              fontSize: fontSize,
+              fontWeight: FontWeight.bold,
+              color: black,
+            ),
+          );
+        case 1:
+          return PieChartSectionData(
+            color: Hexcolor("F2C94C"),
+            value: izin.toDouble(),
+            title: '30%',
+            radius: radius,
+            titleStyle: TextStyle(
+              fontSize: fontSize,
+              fontWeight: FontWeight.bold,
+              color: black,
+            ),
+          );
+        default:
+          return null;
+      }
+    });
   }
 }

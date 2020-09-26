@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:school/screens/screens.dart';
+import 'package:school/utilities/constants.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,10 +13,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-          primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-          accentColor: Colors.blueAccent),
-      home: LoginScreen(title: 'School'),
+        primaryColor: primaryColor,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        accentColor: lightColor,
+        dividerColor: black,
+        textTheme: Typography.blackMountainView,
+      ),
+      home: HomeSiswaScreen(),
     );
   }
 }
