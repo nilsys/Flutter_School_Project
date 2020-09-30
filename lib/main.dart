@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:school/screens/screens.dart';
+import 'package:school/screens/student_list.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
           accentColor: Colors.blueAccent),
-      home: LoginScreen(title: 'School'),
+      home: StudentList(title: 'School'),
     );
   }
 }
