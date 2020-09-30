@@ -33,12 +33,7 @@ class _HomeSiswaScreenState extends State<HomeSiswaScreen> {
         children: <Widget>[
           Text(
             "Agus Prayogi",
-            style: TextStyle(
-              color: white,
-              fontSize: 18,
-              fontFamily: 'Poppins',
-              fontWeight: FontWeight.w700,
-            ),
+            style: titleStyle(18),
           ),
           Text(
             "XII RPL 2",
@@ -54,6 +49,7 @@ class _HomeSiswaScreenState extends State<HomeSiswaScreen> {
                   color: "B4FF7F",
                   title: "Masuk",
                   state: "$masuk",
+                  widht: 43.0,
                 ),
                 Container(
                   margin: EdgeInsets.symmetric(horizontal: 20),
@@ -61,12 +57,14 @@ class _HomeSiswaScreenState extends State<HomeSiswaScreen> {
                     color: "6ab7ff",
                     title: "Total",
                     state: "$total",
+                    widht: 43.0,
                   ),
                 ),
                 BoxKotak(
                   color: "F2C94C",
                   title: "Izin",
                   state: "$izin",
+                  widht: 43.0,
                 ),
               ],
             ),
@@ -122,7 +120,7 @@ class _HomeSiswaScreenState extends State<HomeSiswaScreen> {
           Container(
             margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             width: double.infinity,
-            decoration: bDecoration,
+            decoration: boxHeader,
             padding: EdgeInsets.all(5),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,

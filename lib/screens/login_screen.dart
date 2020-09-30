@@ -23,10 +23,13 @@ class _LoginScreenState extends State<LoginScreen> {
       height: 45,
       child: RaisedButton(
         onPressed: () {
-          Navigator.of(context)
-              .pushReplacement(MaterialPageRoute(builder: (context) {
-            return HomeSiswaScreen();
-          }));
+          Navigator.of(context).pushReplacement(
+            MaterialPageRoute(
+              builder: (context) {
+                return HomeSiswaScreen();
+              },
+            ),
+          );
         },
         child: Text(
           "Login",
@@ -42,6 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       body: Stack(
         children: <Widget>[
           Container(

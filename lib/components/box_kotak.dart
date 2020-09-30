@@ -5,13 +5,19 @@ class BoxKotak extends StatelessWidget {
   final String color;
   final String title;
   final String state;
-  const BoxKotak({Key key, this.color, this.title, this.state})
-      : super(key: key);
+  final double widht;
+  const BoxKotak({
+    Key key,
+    this.color,
+    @required this.title,
+    this.state,
+    @required this.widht,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 43,
+      width: widht,
       decoration: bkotak(color),
       child: Column(
         children: <Widget>[
@@ -21,14 +27,17 @@ class BoxKotak extends StatelessWidget {
               state,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 20,
+                fontSize: 18,
               ),
             ),
           ),
-          Text(
-            title,
-            style: TextStyle(
-              fontSize: 10,
+          Container(
+            margin: EdgeInsets.only(bottom: 4),
+            child: Text(
+              title,
+              style: TextStyle(
+                fontSize: 10,
+              ),
             ),
           ),
         ],

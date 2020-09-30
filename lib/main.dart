@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         dividerColor: black,
         textTheme: Typography.blackMountainView,
       ),
-      home: HomeSiswaScreen(),
+      home: LoginScreen(),
     );
   }
 }

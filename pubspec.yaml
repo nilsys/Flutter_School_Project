@@ -35,6 +35,7 @@ dependencies:
   firebase_database: ^4.0.0
   fl_chart: ^0.11.1
   introduction_screen: ^1.0.9
+  flutter_bloc: ^6.0.5
 
 dev_dependencies:
   flutter_test:

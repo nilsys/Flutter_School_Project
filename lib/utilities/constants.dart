@@ -18,21 +18,36 @@ final inputBoxDecoration = BoxDecoration(
 final txtStyle =
     TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold);
 
-final bDecoration = BoxDecoration(
+final boxHeader = BoxDecoration(
   color: primaryColor,
   border: Border.all(width: 1, color: white),
-  borderRadius: BorderRadius.circular(10),
+  borderRadius: BorderRadius.circular(8),
 );
 
-final Function bkotak = (@required String color) {
+final bkotak = (String color) {
   return BoxDecoration(
     color: Hexcolor(color),
     borderRadius: BorderRadius.circular(5),
   );
 };
 
-final Color primaryColor = Hexcolor("#1E88E5");
-final Color lightColor = Hexcolor("#6ab7ff");
-final Color darkColor = Hexcolor("#005cb2");
-final Color white = Hexcolor("#ffffff");
-final Color black = Hexcolor("#000000");
+final titleStyle = (double size) {
+  return TextStyle(
+    color: white,
+    fontSize: size,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w700,
+  );
+};
+
+final primaryColor = Hexcolor("#1E88E5");
+final lightColor = Hexcolor("#6ab7ff");
+final grayColor = Hexcolor("a6a6a4");
+final darkColor = Hexcolor("#005cb2");
+final white = Hexcolor("#ffffff");
+final black = Hexcolor("#000000");
+
+final masukC = Hexcolor("B4FF7F");
+final izinC = Hexcolor("F2C94C");
+final telatC = Hexcolor("FC7EC2");
+final alpaC = Hexcolor("FC7E7E");
