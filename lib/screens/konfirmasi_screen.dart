@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:intl/intl.dart';
 import 'package:school/components/components.dart';
 import 'package:school/screens/screens.dart';
 import 'package:school/utilities/constants.dart';
 
-class LoginScreen extends StatefulWidget {
-  LoginScreen({Key key, this.title}) : super(key: key);
+class KonfirmasiScreen extends StatefulWidget {
+  KonfirmasiScreen({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _KonfirmasiScreenState createState() => _KonfirmasiScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _KonfirmasiScreenState extends State<KonfirmasiScreen> {
   String email;
   String password;
 
@@ -32,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
           );
         },
         child: Text(
-          "Login",
+          "Submit",
           style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
         ),
         color: primaryColor,
@@ -64,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
             children: <Widget>[
               Container(
                 margin: EdgeInsets.only(top: 20),
-                child: Text("App Name", style: txtStyle),
+                child: Text("Konfirmasi Data", style: txtStyle),
               ),
               Container(
                   decoration: kBoxDecoration,
@@ -75,18 +77,23 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Column(
                       children: <Widget>[
                         TextInput(
-                          label: "Username",
+                          label: "NISN",
                           onChange: (value) => {
                             setState(() => {email = value})
                           },
                           icon: Icons.person,
                         ),
-                        TextInput(
-                          label: "Password",
-                          onChange: (value) => {
-                            setState(() => {password = value})
+                        InputDatePicker(
+                          labelText: "Tanggal Lahir",
+                          prefixIcon: Icon(Icons.date_range),
+                          suffixIcon: Icon(Icons.arrow_drop_down),
+                          dateFormat: DateFormat.yMMMd(),
+                          lastDate: DateTime.now().add(Duration(days: 366)),
+                          firstDate: DateTime.now(),
+                          initialDate: DateTime.now().add(Duration(days: 1)),
+                          onDateChanged: (selectedDate) {
+                            // Do something with the selected date
                           },
-                          icon: Icons.lock,
                         ),
                         _btnLogin(),
                       ],
