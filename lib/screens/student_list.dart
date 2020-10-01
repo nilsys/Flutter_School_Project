@@ -176,7 +176,7 @@ class _StudentListState extends State<StudentList> {
             Row(
               children: [
                 Container(
-                  margin: EdgeInsets.only(left: 30),
+                  margin: EdgeInsets.only(left: 30, bottom: 20),
                   decoration: BoxDecoration(
                       color: Color(0xffe8e8e8),
                       borderRadius: BorderRadius.circular(30)),
@@ -191,7 +191,7 @@ class _StudentListState extends State<StudentList> {
             ),
             Container(
               width: double.infinity,
-              height: 395,
+              height: 375,
               color: Color(0xffe8e8e8),
               child: Text("ListView"),
             ),
