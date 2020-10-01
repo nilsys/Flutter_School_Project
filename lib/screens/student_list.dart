@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:school/utilities/constants.dart';
+import 'package:intl/intl.dart';
 
 class StudentList extends StatefulWidget {
   StudentList({Key key, this.title}) : super(key: key);
@@ -10,128 +12,189 @@ class StudentList extends StatefulWidget {
 
 class _StudentListState extends State<StudentList> {
   @override
+  Widget appBarTitle = new Text(
+    "Daftar Siswa",
+    style: TextStyle(
+      fontSize: 20,
+      color: Colors.black,
+      fontFamily: 'Poppins',
+    ),
+  );
+  Widget filter = new Text("Filter");
+
+  DateTime now = DateTime.now();
+  // DateTime format;
+
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   format = DateFormat.yMMMd().format(now);
+  // }
+
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 0,
-      ),
-      body: Container(
-        padding: EdgeInsets.only(top: 8),
-        color: Color(0xff1E88E5),
-        child: Column(
-          children: <Widget>[
-            // App Bar
-            Container(
-              color: Color(0xff1E88E5),
-              margin: EdgeInsets.only(bottom: 21, right: 32, left: 29),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(
-                    "Student",
-                    style: TextStyle(fontSize: 20, color: Colors.white),
-                  ),
-                  Text(
-                    "Filter",
-                    style: TextStyle(fontSize: 20, color: Colors.white),
-                  ),
-                ],
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(55.0),
+          child: AppBar(
+            backgroundColor: Color(0xffe8e8e8),
+            title: appBarTitle,
+            elevation: 0.0,
+            actions: [
+              new RaisedButton(
+                textColor: Colors.black,
+                onPressed: () {},
+                color: primaryColor,
+                splashColor: Colors.white,
+                animationDuration: Duration(seconds: 10),
+                child: Text(
+                  "Filter",
+                  style: TextStyle(
+                      fontSize: 20, fontFamily: 'Poppins', color: Colors.white),
+                ),
               ),
-            ),
-            // Line
+            ],
+          ),
+        ),
+        body: Column(
+          children: [
             Container(
-              color: Colors.white,
-              height: 3,
-              margin: EdgeInsets.only(bottom: 15),
-            ),
-            // Description Content ListView
-            Container(
-              height: 100,
               width: double.infinity,
-              margin: EdgeInsets.only(right: 32, left: 29),
+              height: MediaQuery.of(context).size.height / 4,
+              padding: EdgeInsets.all(MediaQuery.of(context).size.width / 30),
+              margin: EdgeInsets.all(MediaQuery.of(context).size.width / 22),
+              decoration: BoxDecoration(
+                color: Color(0xffe8e8e8),
+                borderRadius: BorderRadius.circular(7),
+              ),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8, top: 15, bottom: 8),
+                children: [
+                  Text(
+                    "${DateFormat.yMMMd().format(now)}",
+                    style: TextStyle(fontSize: 16, fontFamily: 'Poppins'),
+                  ),
+                  Container(
+                    width: double.infinity,
+                    margin:
+                        EdgeInsets.all(MediaQuery.of(context).size.width / 70),
+                    height: 20,
+                    color: Color(0xffe8e8e8),
                     child: Row(
-                      children: <Widget>[
+                      children: [
                         Container(
-                          height: 20,
                           width: 20,
-                          margin: EdgeInsets.only(left: 10, right: 21),
+                          height: 20,
+                          margin: EdgeInsets.only(right: 10, left: 10),
                           decoration: BoxDecoration(
-                            color: Color(0xff28DF99),
-                            shape: BoxShape.circle,
-                          ),
+                              color: Color(0xff28DF99),
+                              borderRadius: BorderRadius.circular(10)),
                         ),
                         Text(
-                          "Absent",
-                          style: TextStyle(fontSize: 14, color: Colors.black),
+                          "Absen",
+                          style: TextStyle(fontFamily: 'Poppins'),
+                        ),
+                        Container(
+                          width: 20,
+                          height: 20,
+                          margin: EdgeInsets.only(right: 10, left: 110),
+                          decoration: BoxDecoration(
+                              color: Color(0xffFF414D),
+                              borderRadius: BorderRadius.circular(10)),
+                        ),
+                        Text(
+                          "Tidak Absen",
+                          style: TextStyle(fontFamily: 'Poppins'),
                         ),
                       ],
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8, bottom: 8),
+                  Divider(
+                    color: Colors.black,
+                    thickness: 1.5,
+                  ),
+                  Container(
+                    color: Color(0xffe8e8e8),
+                    padding: EdgeInsets.only(right: 30, left: 30),
+                    height: 80,
                     child: Row(
-                      children: <Widget>[
-                        Container(
-                          height: 20,
-                          width: 20,
-                          margin: EdgeInsets.only(left: 10, right: 21),
-                          decoration: BoxDecoration(
-                            color: Color(0xffFF414D),
-                            shape: BoxShape.circle,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SizedBox(
+                          height: 70,
+                          width: 70,
+                          child: RaisedButton(
+                            color: primaryColor,
+                            onPressed: () {},
+                            splashColor: Colors.white,
+                            animationDuration: Duration(seconds: 10),
+                            child: Text(
+                              "XII",
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 18,
+                              ),
+                            ),
                           ),
                         ),
-                        Text(
-                          "Not Absent",
-                          style: TextStyle(fontSize: 14, color: Colors.black),
+                        SizedBox(
+                          height: 70,
+                          width: 70,
+                          child: RaisedButton(
+                            color: primaryColor,
+                            onPressed: () {},
+                            splashColor: Colors.white,
+                            animationDuration: Duration(seconds: 10),
+                            child: Text(
+                              "XI",
+                              style: TextStyle(
+                                  fontFamily: 'Poppins', fontSize: 18),
+                            ),
+                          ),
                         ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 20),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: <Widget>[
-                        Text(
-                          "01 October 2020",
-                          style: TextStyle(fontSize: 14, color: Colors.black),
+                        SizedBox(
+                          height: 70,
+                          width: 70,
+                          child: RaisedButton(
+                            color: primaryColor,
+                            onPressed: () {},
+                            splashColor: Colors.white,
+                            animationDuration: Duration(seconds: 10),
+                            child: Text(
+                              "X",
+                              style: TextStyle(
+                                  fontFamily: 'Poppins', fontSize: 18),
+                            ),
+                          ),
                         ),
                       ],
                     ),
                   ),
                 ],
               ),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
-              ),
             ),
-            // Line
-            Container(
-              height: 5,
-              margin: EdgeInsets.only(top: 15, right: 95, left: 95, bottom: 14),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
-              ),
+            Row(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(left: 30),
+                  decoration: BoxDecoration(
+                      color: Color(0xffe8e8e8),
+                      borderRadius: BorderRadius.circular(30)),
+                  padding:
+                      EdgeInsets.only(right: 15, left: 15, top: 5, bottom: 5),
+                  child: Text(
+                    "Class",
+                    style: TextStyle(fontSize: 18, fontFamily: 'Poppins'),
+                  ),
+                ),
+              ],
             ),
-            // Text Class
             Container(
-              color: Color(0xff1E88E5),
-              padding: EdgeInsets.only(left: 62),
-              height: 34,
               width: double.infinity,
-              child: Text(
-                "Class",
-                style: TextStyle(fontSize: 20, color: Colors.white),
-              ),
+              height: 395,
+              color: Color(0xffe8e8e8),
+              child: Text("ListView"),
             ),
-            // ListView
           ],
         ),
       ),
