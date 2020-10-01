@@ -1,6 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:school/components/box_kotak.dart';
+import 'package:school/components/components.dart';
 import 'package:school/utilities/constants.dart';
 
 class HomeGuruScreen extends StatefulWidget {

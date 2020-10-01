@@ -1,13 +1,7 @@
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
-import 'package:school/components/already_account.dart';
-import 'package:school/components/or_divider.dart';
-import 'package:school/components/rounded_button.dart';
-import 'package:school/components/rounded_input_field.dart';
-import 'package:school/components/rounded_password_field.dart';
-import 'package:school/components/social_icon.dart';
-
-import 'package:school/screens/login_screen.dart';
+import 'package:school/components/components.dart';
+import 'package:school/screens/screens.dart';
 
 class RegisterScreen extends StatelessWidget {
   @override
@@ -61,7 +55,7 @@ class RegisterScreen extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return LoginScreen();
+                            return RegisterScreen();
                           },
                         ),
                       );
@@ -76,7 +70,7 @@ class RegisterScreen extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return LoginScreen();
+                            return RegisterScreen();
                           },
                         ),
                       );

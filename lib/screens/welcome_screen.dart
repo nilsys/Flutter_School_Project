@@ -1,8 +1,7 @@
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
-import 'package:school/screens/login_screen.dart';
-import 'package:school/screens/register_screen.dart';
-import 'package:school/components/rounded_button.dart';
+import 'package:school/screens/screens.dart';
+import 'package:school/components/components.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override

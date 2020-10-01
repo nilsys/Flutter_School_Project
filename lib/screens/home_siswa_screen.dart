@@ -202,6 +202,15 @@ class _HomeSiswaScreenState extends State<HomeSiswaScreen> {
               ],
             ),
           ),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            width: double.infinity,
+            padding: EdgeInsets.all(10),
+            decoration: bkotak("ffffff"),
+            child: Column(
+              children: [Text("hai")],
+            ),
+          ),
           _list()
         ],
       ),
