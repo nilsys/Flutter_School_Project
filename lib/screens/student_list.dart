@@ -23,13 +23,6 @@ class _StudentListState extends State<StudentList> {
   Widget filter = new Text("Filter");
 
   DateTime now = DateTime.now();
-  // DateTime format;
-
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   format = DateFormat.yMMMd().format(now);
-  // }
 
   Widget build(BuildContext context) {
     return MaterialApp(
