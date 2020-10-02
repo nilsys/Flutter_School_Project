@@ -74,30 +74,59 @@ class _StudentListState extends State<StudentList> {
                     height: 20,
                     color: Color(0xffe8e8e8),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Container(
-                          width: 20,
-                          height: 20,
-                          margin: EdgeInsets.only(right: 10, left: 10),
-                          decoration: BoxDecoration(
-                              color: Color(0xff28DF99),
-                              borderRadius: BorderRadius.circular(10)),
+                        Row(
+                          children: [
+                            Container(
+                              color: Color(0xffe8e8e8),
+                              child: Container(
+                                  child: Row(
+                                children: [
+                                  Container(
+                                    width: 20,
+                                    height: 20,
+                                    margin:
+                                        EdgeInsets.only(right: 10, left: 10),
+                                    decoration: BoxDecoration(
+                                        color: Color(0xff28DF99),
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                  ),
+                                  Text(
+                                    "Absen",
+                                    style: TextStyle(fontFamily: 'Poppins'),
+                                  ),
+                                ],
+                              )),
+                            ),
+                          ],
                         ),
-                        Text(
-                          "Absen",
-                          style: TextStyle(fontFamily: 'Poppins'),
-                        ),
-                        Container(
-                          width: 20,
-                          height: 20,
-                          margin: EdgeInsets.only(right: 10, left: 110),
-                          decoration: BoxDecoration(
-                              color: Color(0xffFF414D),
-                              borderRadius: BorderRadius.circular(10)),
-                        ),
-                        Text(
-                          "Tidak Absen",
-                          style: TextStyle(fontFamily: 'Poppins'),
+                        Row(
+                          children: [
+                            Container(
+                              color: Color(0xffe8e8e8),
+                              child: Container(
+                                  child: Row(
+                                children: [
+                                  Container(
+                                    width: 20,
+                                    height: 20,
+                                    margin:
+                                        EdgeInsets.only(right: 10, left: 10),
+                                    decoration: BoxDecoration(
+                                        color: Color(0xffFF414D),
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                  ),
+                                  Text(
+                                    "Tidak Absen",
+                                    style: TextStyle(fontFamily: 'Poppins'),
+                                  ),
+                                ],
+                              )),
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -169,12 +198,11 @@ class _StudentListState extends State<StudentList> {
             Row(
               children: [
                 Container(
-                  margin: EdgeInsets.only(left: 30, bottom: 20),
+                  margin: EdgeInsets.only(left: 30, bottom: 5),
                   decoration: BoxDecoration(
                       color: Color(0xffe8e8e8),
                       borderRadius: BorderRadius.circular(30)),
-                  padding:
-                      EdgeInsets.only(right: 15, left: 15, top: 5, bottom: 5),
+                  padding: EdgeInsets.only(right: 15, left: 15),
                   child: Text(
                     "Class",
                     style: TextStyle(fontSize: 18, fontFamily: 'Poppins'),
@@ -182,11 +210,14 @@ class _StudentListState extends State<StudentList> {
                 ),
               ],
             ),
-            Container(
-              width: double.infinity,
-              height: 375,
-              color: Color(0xffe8e8e8),
-              child: Text("ListView"),
+            Flexible(
+              flex: 1,
+              child: Container(
+                width: double.infinity,
+                height: double.maxFinite,
+                color: Color(0xffe8e8e8),
+                child: Text("ListView"),
+              ),
             ),
           ],
         ),
