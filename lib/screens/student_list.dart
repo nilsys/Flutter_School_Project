@@ -11,6 +11,9 @@ class StudentList extends StatefulWidget {
 }
 
 class _StudentListState extends State<StudentList> {
+  String jurusan;
+  List _jurusan = ["RPL", "TKJ"];
+
   @override
   Widget appBarTitle = new Text(
     "Daftar Siswa",
@@ -37,7 +40,9 @@ class _StudentListState extends State<StudentList> {
             actions: [
               new RaisedButton(
                 textColor: Colors.black,
-                onPressed: () {},
+                onPressed: () {
+                  _filterModal(context);
+                },
                 color: primaryColor,
                 splashColor: Colors.white,
                 animationDuration: Duration(seconds: 10),
@@ -198,7 +203,7 @@ class _StudentListState extends State<StudentList> {
             Row(
               children: [
                 Container(
-                  margin: EdgeInsets.only(left: 30, bottom: 5),
+                  margin: EdgeInsets.only(left: 30, bottom: 10),
                   decoration: BoxDecoration(
                       color: Color(0xffe8e8e8),
                       borderRadius: BorderRadius.circular(30)),
@@ -223,5 +228,49 @@ class _StudentListState extends State<StudentList> {
         ),
       ),
     );
+  }
+
+  _filterModal(BuildContext context) {
+    return showModalBottomSheet(
+        context: context,
+        builder: (BuildContext context) {
+          return Container(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Text(
+                    "Filter",
+                    style: TextStyle(fontFamily: 'Poppins', fontSize: 20),
+                  ),
+                ),
+                DropdownButton(
+                  hint: Text("Pilih Jurusan"),
+                  value: jurusan,
+                  items: _jurusan.map((value) {
+                    return DropdownMenuItem(
+                      child: Text(value),
+                      value: value,
+                    );
+                  }).toList(),
+                  onChanged: (value) {
+                    setState(() {
+                      jurusan = value;
+                    });
+                    print("Total: " + value);
+                  },
+                ),
+                Text(
+                  "Jurusanmu adalah $jurusan",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+          );
+        });
   }
 }
