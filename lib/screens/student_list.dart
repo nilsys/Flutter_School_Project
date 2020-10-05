@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:school/components/filter.dart';
 import 'package:school/utilities/constants.dart';
 import 'package:intl/intl.dart';
 
 class StudentList extends StatefulWidget {
-  StudentList({Key key, this.title}) : super(key: key);
+  const StudentList({Key key, this.title}) : super(key: key);
 
   final String title;
   @override
@@ -11,8 +12,7 @@ class StudentList extends StatefulWidget {
 }
 
 class _StudentListState extends State<StudentList> {
-  String jurusan;
-  List _jurusan = ["RPL", "TKJ"];
+  String jurusan = '';
 
   @override
   Widget appBarTitle = new Text(
@@ -234,8 +234,7 @@ class _StudentListState extends State<StudentList> {
     return showModalBottomSheet(
         context: context,
         builder: (BuildContext context) {
-          return Container(
-            child: Column(
+          return Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
@@ -245,21 +244,12 @@ class _StudentListState extends State<StudentList> {
                     style: TextStyle(fontFamily: 'Poppins', fontSize: 20),
                   ),
                 ),
-                DropdownButton(
-                  hint: Text("Pilih Jurusan"),
-                  value: jurusan,
-                  items: _jurusan.map((value) {
-                    return DropdownMenuItem(
-                      child: Text(value),
-                      value: value,
-                    );
-                  }).toList(),
-                  onChanged: (value) {
-                    setState(() {
-                      jurusan = value;
-                    });
-                    print("Total: " + value);
+                DropDown(
+                  getData: (x) {
+                    jurusan = x;
+                    setState(() {});
                   },
+                  value: jurusan,
                 ),
                 Text(
                   "Jurusanmu adalah $jurusan",
@@ -268,9 +258,7 @@ class _StudentListState extends State<StudentList> {
                       fontSize: 20,
                       fontWeight: FontWeight.bold),
                 ),
-              ],
-            ),
-          );
+              ]);
         });
   }
 }
