@@ -1,9 +1,40 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
 import 'package:school/components/components.dart';
 import 'package:school/screens/screens.dart';
+import 'package:school/services/services.dart';
 
-class RegisterScreen extends StatelessWidget {
+class RegisterScreen extends StatefulWidget {
+  RegisterScreen({Key key}) : super(key: key);
+
+  @override
+  _RegisterScreenState createState() => _RegisterScreenState();
+}
+
+class _RegisterScreenState extends State<RegisterScreen> {
+  String _user;
+  String _pass;
+
+  _register(BuildContext con) async {
+    if (_user.isEmpty) {
+      Scaffold.of(con)
+          .showSnackBar(SnackBar(content: Text("Email Harus diisi!!")));
+    } else if (_pass.isEmpty) {
+      Scaffold.of(con)
+          .showSnackBar(SnackBar(content: Text("Password Harus diisi!!")));
+    } else {
+      ResultAuth _rest = await Auth.signUp(_user, _pass);
+      if (_rest.user != null) {
+        Navigator.of(con).pushReplacement(MaterialPageRoute(builder: (con) {
+          return KonfirmasiScreen();
+        }));
+      } else {
+        Scaffold.of(con).showSnackBar(SnackBar(content: Text(_rest.message)));
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -44,21 +75,30 @@ class RegisterScreen extends StatelessWidget {
                   RoundedInputField(
                     hintText: "Your Email",
                     icon: Icons.email,
-                    onChanged: (value) {},
+                    onChanged: (value) {
+                      setState(() {
+                        _user = value;
+                      });
+                    },
                   ),
                   RoundedPasswordField(
-                    onChanged: (value) {},
+                    onChanged: (value) {
+                      setState(() {
+                        _pass = value;
+                      });
+                    },
                   ),
                   RoundedButton(
                     press: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return RegisterScreen();
-                          },
-                        ),
-                      );
+                      _register(context);
+                      // Navigator.pushReplacement(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (context) {
+                      //       return RegisterScreen();
+                      //     },
+                      //   ),
+                      // );
                     },
                     text: "SIGN UP",
                   ),
@@ -70,7 +110,7 @@ class RegisterScreen extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return RegisterScreen();
+                            return LoginScreen();
                           },
                         ),
                       );

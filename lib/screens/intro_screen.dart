@@ -19,7 +19,10 @@ class _IntroScreenState extends State<IntroScreen> {
 
   Widget _buildImage(String assetName) {
     return Align(
-      child: SvgPicture.asset('assets/images/$assetName.svg', width: 350.0),
+      child: Container(
+          margin: EdgeInsets.only(top: 20),
+          child:
+              SvgPicture.asset('assets/images/$assetName.svg', width: 350.0)),
       alignment: Alignment.bottomCenter,
     );
   }

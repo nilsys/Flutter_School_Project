@@ -5,4 +5,6 @@ export 'register_screen.dart';
 export 'welcome_screen.dart';
 export 'student_list.dart';
 export 'intro_screen.dart';
-export 'LoginScreen.dart';
+export 'login_screen.dart';
+export 'loading_screen.dart';
+export 'profil_screen.dart';

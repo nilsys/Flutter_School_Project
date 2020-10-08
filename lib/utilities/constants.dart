@@ -40,6 +40,21 @@ final titleStyle = (double size) {
   );
 };
 
+final txt = (double size, Color color) {
+  return TextStyle(
+    color: color,
+    fontSize: size,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w400,
+  );
+};
+final txtChild = (double size, Color color) {
+  return TextStyle(
+    color: color,
+    fontSize: size,
+  );
+};
+
 final primaryColor = Hexcolor("#1E88E5");
 final lightColor = Hexcolor("#6ab7ff");
 final grayColor = Hexcolor("a6a6a4");

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:school/components/components.dart';
+import 'package:school/screens/screens.dart';
+import 'package:school/services/firebase_auth.dart';
 import 'package:school/utilities/constants.dart';
 
 class HomeSiswaScreen extends StatefulWidget {
@@ -203,12 +205,25 @@ class _HomeSiswaScreenState extends State<HomeSiswaScreen> {
             ),
           ),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            margin: EdgeInsets.symmetric(horizontal: 20),
             width: double.infinity,
             padding: EdgeInsets.all(10),
-            decoration: bkotak("ffffff"),
+            decoration: bkotak("d04fc3"),
             child: Column(
-              children: [Text("hai")],
+              children: [
+                RaisedButton(
+                  color: Colors.amber,
+                  onPressed: () async {
+                    Auth.signOut();
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => WelcomeScreen()),
+                        (route) => false);
+                  },
+                  child: Text("Log Out"),
+                )
+              ],
             ),
           ),
           _list()
