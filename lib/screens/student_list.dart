@@ -12,6 +12,7 @@ class StudentList extends StatefulWidget {
 }
 
 class _StudentListState extends State<StudentList> {
+  List<String> _jurusan = ['RPL', 'TKJ'];
   String jurusan = '';
 
   @override

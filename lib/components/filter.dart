@@ -16,7 +16,7 @@ class _DropDownState extends State<DropDown> {
   Widget build(BuildContext context) {
     return DropdownButton(
       hint: Text("Pilih Jurusan"),
-      value: data ?? widget.value,
+      value: data,
       items: <String>['RPL', 'TKJ'].map<DropdownMenuItem>((value) {
         return DropdownMenuItem<String>(
           child: Text(value),
