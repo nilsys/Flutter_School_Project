@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:school/components/filter.dart';
+import 'package:school/components/student_listview.dart';
 import 'package:school/utilities/constants.dart';
 import 'package:intl/intl.dart';
 
@@ -216,15 +217,7 @@ class _StudentListState extends State<StudentList> {
                 ),
               ],
             ),
-            Flexible(
-              flex: 1,
-              child: Container(
-                width: double.infinity,
-                height: double.maxFinite,
-                color: Color(0xffe8e8e8),
-                child: Text("ListView"),
-              ),
-            ),
+            Flexible(flex: 1, child: StudentListView()),
           ],
         ),
       ),
