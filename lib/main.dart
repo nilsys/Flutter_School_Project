@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:school/screens/screens.dart';
+import 'package:school/screens/students_list.dart';
 import 'package:school/utilities/constants.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         dividerColor: black,
         textTheme: Typography.blackMountainView,
       ),
-      home: StudentList(),
+      home: StudentsList(),
     );
   }
 }
