@@ -10,7 +10,7 @@ class _DetailAbsensiState extends State<DetailAbsensi> {
   int tabIndex = 0;
   @override
   Widget build(BuildContext context) {
-    TabBar tabbar = TabBar(
+    TabBar tb = TabBar(
       onTap: (index) {
         setState(() {
           tabIndex = index;
@@ -64,11 +64,9 @@ class _DetailAbsensiState extends State<DetailAbsensi> {
           appBar: AppBar(
             elevation: 0.0,
             bottom: PreferredSize(
-                preferredSize: Size.fromHeight(tabbar.preferredSize.height),
+                preferredSize: Size.fromHeight(tb.preferredSize.height),
                 child: Container(
-                    width: double.infinity,
-                    color: Colors.white,
-                    child: tabbar)),
+                    width: double.infinity, color: Colors.white, child: tb)),
             toolbarHeight: 48,
           ),
           body: tv,
