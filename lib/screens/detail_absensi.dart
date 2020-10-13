@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:school/utilities/constants.dart';
 
-class StudentsList extends StatefulWidget {
+class DetailAbsensi extends StatefulWidget {
   @override
-  _StudentsListState createState() => _StudentsListState();
+  _DetailAbsensiState createState() => _DetailAbsensiState();
 }
 
-class _StudentsListState extends State<StudentsList> {
+class _DetailAbsensiState extends State<DetailAbsensi> {
   int tabIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -38,6 +38,25 @@ class _StudentsListState extends State<StudentsList> {
         ),
       ],
     );
+    TabBarView tv = TabBarView(
+      children: [
+        Center(
+            child: Text(
+          "0",
+          style: TextStyle(fontSize: 40),
+        )),
+        Center(
+            child: Text(
+          "1",
+          style: TextStyle(fontSize: 40),
+        )),
+        Center(
+            child: Text(
+          "2",
+          style: TextStyle(fontSize: 40),
+        )),
+      ],
+    );
     return DefaultTabController(
       length: 3,
       child: MaterialApp(
@@ -52,25 +71,7 @@ class _StudentsListState extends State<StudentsList> {
                     child: tabbar)),
             toolbarHeight: 48,
           ),
-          body: TabBarView(
-            children: [
-              Center(
-                  child: Text(
-                "0",
-                style: TextStyle(fontSize: 40),
-              )),
-              Center(
-                  child: Text(
-                "1",
-                style: TextStyle(fontSize: 40),
-              )),
-              Center(
-                  child: Text(
-                "2",
-                style: TextStyle(fontSize: 40),
-              )),
-            ],
-          ),
+          body: tv,
         ),
       ),
     );
