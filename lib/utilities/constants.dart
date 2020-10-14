@@ -45,9 +45,18 @@ final txt = (double size, Color color) {
     color: color,
     fontSize: size,
     fontFamily: 'Poppins',
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w500,
   );
 };
+
+final topTxt = (double size) {
+  return TextStyle(
+      fontSize: size,
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w600,
+      color: black);
+};
+
 final txtChild = (double size, Color color) {
   return TextStyle(
     color: color,

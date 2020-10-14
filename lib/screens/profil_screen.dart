@@ -18,7 +18,7 @@ class _ProfilScreenState extends State<ProfilScreen> {
       body: Stack(
         children: [
           Container(
-            height: (2 / 3 * 1) * MediaQuery.of(context).size.height,
+            height: (1 / 2 * 1) * MediaQuery.of(context).size.height,
             width: double.infinity,
             decoration: BoxDecoration(
               color: primaryColor,
@@ -121,32 +121,55 @@ class _ProfilScreenState extends State<ProfilScreen> {
                   ],
                 ),
               ),
-            ],
-          ),
-          Positioned(
-            top: (2 / 3 * 1) * MediaQuery.of(context).size.height,
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: Container(
-                margin: EdgeInsets.all(20),
-                padding: EdgeInsets.symmetric(vertical: 15, horizontal: 25),
-                child: InkWell(
-                  onTap: () {},
-                  child: Text(
-                    "Edit Profile",
-                    style: TextStyle(
-                      color: white,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 15,
+              Align(
+                alignment: Alignment.topLeft,
+                child: Container(
+                  width: 145,
+                  alignment: Alignment.center,
+                  margin: EdgeInsets.all(20),
+                  padding: EdgeInsets.symmetric(vertical: 15, horizontal: 25),
+                  child: InkWell(
+                    onTap: () {},
+                    child: Text(
+                      "Edit Profile",
+                      style: TextStyle(
+                        color: white,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 15,
+                      ),
                     ),
                   ),
-                ),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40),
-                  color: primaryColor,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(40),
+                    color: primaryColor,
+                  ),
                 ),
               ),
-            ),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Container(
+                  width: 145,
+                  alignment: Alignment.center,
+                  margin: EdgeInsets.only(left: 20),
+                  padding: EdgeInsets.symmetric(vertical: 15, horizontal: 25),
+                  child: InkWell(
+                    onTap: () {},
+                    child: Text(
+                      "Saran",
+                      style: TextStyle(
+                        color: white,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(40),
+                    color: primaryColor,
+                  ),
+                ),
+              ),
+            ],
           ),
           Align(
             alignment: Alignment.bottomRight,
