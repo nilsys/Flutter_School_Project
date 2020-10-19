@@ -19,7 +19,7 @@ class _TabBarAbsensiState extends State<TabBarAbsensi>
   @override
   void initState() {
     super.initState();
-    _controller = TabController(length: 3, vsync: this)
+    _controller = TabController(length: _itemTb.length, vsync: this)
       ..addListener(() {
         setState(() {
           indicatorColor = colors[_controller.index];
@@ -28,7 +28,13 @@ class _TabBarAbsensiState extends State<TabBarAbsensi>
     indicatorColor = colors[0];
   }
 
-  final _itemTb = [
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  final List<Tab> _itemTb = <Tab>[
     Tab(
       child: Text(
         "Masuk",
@@ -104,15 +110,8 @@ class _TabBarAbsensiState extends State<TabBarAbsensi>
     );
   }
 
-  DefaultTabController dtc() {
-    return DefaultTabController(
-      length: 3,
-      child: _buildScreen(),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
-    return dtc();
+    return _buildScreen();
   }
 }
