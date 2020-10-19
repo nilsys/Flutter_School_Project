@@ -11,7 +11,6 @@ class TabBarAbsensi extends StatefulWidget {
 
 class _TabBarAbsensiState extends State<TabBarAbsensi>
     with SingleTickerProviderStateMixin {
-  int tabIndex = 0;
   final colors = [Color(0xff2f80ed), Color(0xff219653), Color(0xffeb5757)];
   Color indicatorColor;
   TabController _controller;
