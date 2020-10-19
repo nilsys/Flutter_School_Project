@@ -109,6 +109,57 @@ class _HomeSiswaScreenState extends State<HomeSiswaScreen> {
     );
   }
 
+  Widget _list() {
+    return Expanded(
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5),
+          color: lightColor,
+        ),
+        margin: EdgeInsets.symmetric(
+          vertical: 10,
+          horizontal: 20,
+        ),
+        child: ListView(
+          scrollDirection: Axis.vertical,
+          children: [
+            for (int i = 1; i <= 20; i++)
+              Card(
+                color: Hexcolor("#B4FF7F"),
+                child: Row(
+                  children: [
+                    _kotakJam(),
+                    Container(
+                      height: 44,
+                      alignment: Alignment.topLeft,
+                      margin: EdgeInsets.symmetric(horizontal: 3),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "30 September",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                            "Status : Tepat Waktu",
+                            style: TextStyle(),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -151,54 +202,7 @@ class _HomeSiswaScreenState extends State<HomeSiswaScreen> {
               ],
             ),
           ),
-          Expanded(
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                color: lightColor,
-              ),
-              margin: EdgeInsets.symmetric(
-                vertical: 10,
-                horizontal: 20,
-              ),
-              child: ListView(
-                scrollDirection: Axis.vertical,
-                children: [
-                  for (int i = 1; i <= 20; i++)
-                    Card(
-                        color: Hexcolor("#B4FF7F"),
-                        child: Row(
-                          children: [
-                            _kotakJam(),
-                            Container(
-                              height: 44,
-                              alignment: Alignment.topLeft,
-                              margin: EdgeInsets.symmetric(horizontal: 3),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    "30 September",
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  Text(
-                                    "Status : Tepat Waktu",
-                                    style: TextStyle(),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ],
-                        )),
-                ],
-              ),
-            ),
-          )
+          _list()
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
