@@ -7,8 +7,6 @@ import 'package:school/components/rounded_input_field.dart';
 import 'package:school/components/rounded_password_field.dart';
 import 'package:school/components/social_icon.dart';
 
-import 'package:school/screens/login_screen.dart';
-
 class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -57,14 +55,14 @@ class RegisterScreen extends StatelessWidget {
                   ),
                   RoundedButton(
                     press: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return LoginScreen();
-                          },
-                        ),
-                      );
+                      // Navigator.pushReplacement(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (context) {
+                      //       return LoginScreen();
+                      //     },
+                      //   ),
+                      // );
                     },
                     text: "SIGN UP",
                   ),
@@ -72,14 +70,14 @@ class RegisterScreen extends StatelessWidget {
                   AlreadyAccount(
                     login: false,
                     press: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return LoginScreen();
-                          },
-                        ),
-                      );
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (context) {
+                      //       return LoginScreen();
+                      //     },
+                      //   ),
+                      // );
                     },
                   ),
                   OrDivider(),
