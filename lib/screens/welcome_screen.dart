@@ -1,6 +1,5 @@
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
-import 'package:school/screens/login_screen.dart';
 import 'package:school/screens/register_screen.dart';
 import 'package:school/components/rounded_button.dart';
 
@@ -43,14 +42,14 @@ class WelcomeScreen extends StatelessWidget {
               RoundedButton(
                 text: "SIGN IN",
                 press: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return LoginScreen();
-                      },
-                    ),
-                  );
+                  // Navigator.pushReplacement(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) {
+                  //       return LoginScreen();
+                  //     },
+                  //   ),
+                  // );
                 },
               ),
               RoundedButton(

@@ -40,6 +40,14 @@ final titleStyle = (double size) {
   );
 };
 
+const whiteColor = Color(0xFFFFFFFF);
+const grey4Color = Color(0xFFFBDBDBD);
+const grey2Color = Color(0xFFF4F4F4F);
+const greyColor = Color(0xFFF2F2F2);
+const superLightColor = Color(0xFFE1F1FF);
+const blackColor = Color(0xFF333333);
+
+
 final primaryColor = Hexcolor("#1E88E5");
 final lightColor = Hexcolor("#6ab7ff");
 final grayColor = Hexcolor("a6a6a4");

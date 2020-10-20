@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:school/screens/dashboard_v2.dart';
 import 'package:school/screens/screens.dart';
 import 'package:school/utilities/constants.dart';
 
@@ -11,15 +12,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primaryColor: primaryColor,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        accentColor: lightColor,
-        dividerColor: black,
-        textTheme: Typography.blackMountainView,
-      ),
-      home: KonfirmasiScreen(),
-    );
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primaryColor: primaryColor,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+          accentColor: lightColor,
+          dividerColor: black,
+          textTheme: Typography.blackMountainView,
+        ),
+        home: Dashboardv2());
   }
 }

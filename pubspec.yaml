@@ -61,6 +61,15 @@ flutter:
     - assets/images/vectopleft.png
     - assets/images/vecbottomleft.png
     - assets/images/vecbottomright.png
+    - assets/icons/google.svg
+    - assets/images/profile.png
+    - assets/images/ig.png
+    - assets/images/sun.svg
+    - assets/images/data.svg
+    - assets/images/house.svg
+    - assets/images/friend.svg
+    - assets/images/teacher.svg
+    - assets/images/secure_data.svg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see
@@ -78,5 +87,21 @@ flutter:
           weight: 700
         - asset: assets/fonts/Poppins-Italic.ttf
           style: italic
+    - family: Poppins-Regular
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+          style: normal
+    - family: Poppins-Medium
+      fonts:
+        - asset: assets/fonts/Poppins-Medium.ttf
+          style: normal
+    - family: Poppins-SemiBold
+      fonts:
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          style: normal
+    - family: Poppins-Bold
+      fonts:
+        - asset: assets/fonts/Poppins-Bold.ttf
+          style: normal
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
