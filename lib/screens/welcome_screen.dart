@@ -41,7 +41,7 @@ class WelcomeScreen extends StatelessWidget {
               SizedBox(height: size.height * 0.05),
               RoundedButton(
                 text: "SIGN IN",
-                press: () {
+                onPress: () {
                   // Navigator.pushReplacement(
                   //   context,
                   //   MaterialPageRoute(
@@ -54,7 +54,7 @@ class WelcomeScreen extends StatelessWidget {
               ),
               RoundedButton(
                 text: "SIGN UP",
-                press: () {
+                onPress: () {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(

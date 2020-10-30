@@ -54,7 +54,7 @@ class RegisterScreen extends StatelessWidget {
                     onChanged: (value) {},
                   ),
                   RoundedButton(
-                    press: () {
+                    onPress: () {
                       // Navigator.pushReplacement(
                       //   context,
                       //   MaterialPageRoute(
@@ -86,7 +86,7 @@ class RegisterScreen extends StatelessWidget {
                     children: <Widget>[
                       SocialIcon(
                         icon: "assets/icons/google.svg",
-                        press: () {},
+                        onTap: () {},
                       ),
                     ],
                   )

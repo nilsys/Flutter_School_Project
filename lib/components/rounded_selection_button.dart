@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:school/utilities/constants.dart';
 
-class RoundedSelectionButtonV2 extends StatelessWidget {
+class RoundedSelectionButton extends StatelessWidget {
   final String desc;
   final String title;
   final IconData icon;
   final Function onTap;
   final double allSize;
 
-  RoundedSelectionButtonV2({
+  RoundedSelectionButton({
     Key key,
     this.desc,
     this.icon,
@@ -22,7 +22,7 @@ class RoundedSelectionButtonV2 extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     final double newFontSize = allSize / 1.5;
     final double newHeightContainer = allSize * 3.2;
-    final double newIconSize = allSize + 6;
+    final double newIconSize = allSize * 1.6;
     final double newIconButtonSize = allSize * 2.7;
 
     return Container(
@@ -48,30 +48,28 @@ class RoundedSelectionButtonV2 extends StatelessWidget {
               ),
             )),
             Material(
-              child: Flexible(
-                child: Container(
-                  width: size.width * 0.48,
-                  color: greyColor,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(title,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            color: blackColor,
-                            fontFamily: "Poppins-Medium",
-                            fontSize: allSize,
-                          )),
-                      Text(desc,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            color: grey2Color,
-                            fontFamily: "Poppins-Regular",
-                            fontSize: newFontSize,
-                          )),
-                    ],
-                  ),
+              child: Container(
+                width: size.width * 0.48,
+                color: greyColor,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(title,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          color: blackColor,
+                          fontFamily: "Poppins-Medium",
+                          fontSize: allSize,
+                        )),
+                    Text(desc,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          color: grey2Color,
+                          fontFamily: "Poppins-Regular",
+                          fontSize: newFontSize,
+                        )),
+                  ],
                 ),
               ),
             ),

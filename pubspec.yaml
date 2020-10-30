@@ -37,6 +37,9 @@ dependencies:
   introduction_screen: ^1.0.9
   flutter_bloc: ^6.0.5
   flutter_svg: ^0.19.0
+  charts_flutter: ^0.9.0
+  qrscan: ^0.2.17
+  filter_list: ^0.0.5
 
 dev_dependencies:
   flutter_test:
@@ -52,17 +55,16 @@ flutter:
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/icons/google.svg
-    - assets/images/signin.svg
-    - assets/images/signup.svg
-    - assets/images/welcome.svg
-    - assets/images/vectopright.png
-    - assets/images/vectopleft.png
-    - assets/images/vecbottomleft.png
-    - assets/images/vecbottomright.png
-    - assets/icons/google.svg
-    - assets/images/profile.png
+    - assets/icons/facebook.png
+    - assets/icons/instagram.png
+    - assets/icons/twitter.png
     - assets/images/ig.png
+    - assets/images/ig2.png
+    - assets/images/houses.png
+    - assets/images/secure_data.png
+    - assets/images/data.png
+    - assets/images/safe_bank.png
+    - assets/images/profile.png
     - assets/images/sun.svg
     - assets/images/data.svg
     - assets/images/house.svg
