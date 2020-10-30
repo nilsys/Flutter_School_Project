@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:school/utilities/constants.dart';
 
-class RoundedFilterButtonV2 extends StatelessWidget {
+class RoundedFilterButton extends StatelessWidget {
   final Function onTap;
   final double allSize;
 
-  RoundedFilterButtonV2({
+  RoundedFilterButton({
     Key key,
     this.onTap,
     this.allSize,

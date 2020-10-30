@@ -1,6 +1,9 @@
+import 'dart:collection';
+
 import 'package:flutter/material.dart';
-import 'package:school/screens/dashboard_v2.dart';
-import 'package:school/screens/screens.dart';
+import 'package:school/screens/dashboard.dart';
+import 'package:school/screens/master.dart';
+import 'package:school/screens/splash.dart';
 import 'package:school/utilities/constants.dart';
 
 void main() {
@@ -21,6 +24,6 @@ class MyApp extends StatelessWidget {
           dividerColor: black,
           textTheme: Typography.blackMountainView,
         ),
-        home: Dashboardv2());
+        home: Splash());
   }
 }

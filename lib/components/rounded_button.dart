@@ -3,33 +3,33 @@ import 'package:school/utilities/constants.dart';
 
 class RoundedButton extends StatelessWidget {
   final String text;
-  final Function press;
+  final Function onPress;
 
   const RoundedButton({
     Key key,
-    this.press,
     this.text,
+    this.onPress,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      width: size.width * 0.8,
-      margin: EdgeInsets.symmetric(vertical: 10),
+      width: size.width * 0.9,
+      margin: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(30),
         child: FlatButton(
-            padding: EdgeInsets.symmetric(vertical: 17, horizontal: 27),
-            onPressed: press,
+            onPressed: onPress,
             color: primaryColor,
+            padding: EdgeInsets.symmetric(vertical: 12),
             child: Text(
               text,
               style: TextStyle(
-                  color: Colors.white,
-                  fontFamily: "Poppins",
-                  fontSize: 17,
-                  fontWeight: FontWeight.bold),
+                fontSize: 22,
+                color: whiteColor,
+                fontFamily: "Poppins-SemiBold",
+              ),
             )),
       ),
     );

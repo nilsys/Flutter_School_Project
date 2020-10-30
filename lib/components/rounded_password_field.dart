@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:school/components/textFieldContainer.dart';
 import 'package:school/utilities/constants.dart';
 
 class RoundedPasswordField extends StatelessWidget {
@@ -9,24 +8,32 @@ class RoundedPasswordField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFieldContainer(
+    Size size = MediaQuery.of(context).size;
+
+    return Container(
+      width: size.width * 0.9,
+      margin: EdgeInsets.symmetric(vertical: 5),
+      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+      decoration: BoxDecoration(
+          color: superLightColor, borderRadius: BorderRadius.circular(30)),
       child: TextField(
         obscureText: true,
         onChanged: onChanged,
-        cursorColor: Colors.white,
-        style: TextStyle(color: Colors.white),
+        cursorColor: primaryColor,
+        style: TextStyle(color: blackColor),
         decoration: InputDecoration(
             icon: Icon(
               Icons.lock,
-              color: Colors.white,
+              color: primaryColor,
             ),
             suffixIcon: Icon(
               Icons.visibility,
-              color: Colors.white,
+              color: primaryColor,
             ),
-            fillColor: Colors.white,
-            hintText: "Your Password",
-            hintStyle: TextStyle(color: Colors.white, fontFamily: "Poppins"),
+            fillColor: primaryColor,
+            hintText: "Masukkan password kamu!",
+            hintStyle: TextStyle(
+                color: lightColor, fontFamily: "Poppins-Regular", fontSize: 14),
             border: InputBorder.none),
       ),
     );

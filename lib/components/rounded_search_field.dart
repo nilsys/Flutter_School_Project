@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:school/utilities/constants.dart';
-import 'package:school/components/text_field_container.dart';
 
-class RoundedInputField extends StatelessWidget {
+class RoundedSearchField extends StatelessWidget {
   final Color color;
   final IconData icon;
   final Color conColor;
@@ -10,7 +9,7 @@ class RoundedInputField extends StatelessWidget {
   final Color hintColor;
   final ValueChanged<String> onChanged;
 
-  const RoundedInputField(
+  const RoundedSearchField(
       {Key key,
       this.icon,
       this.color,
@@ -22,8 +21,22 @@ class RoundedInputField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFieldContainer(
-      conColor: conColor,
+    Size size = MediaQuery.of(context).size;
+
+    return Container(
+      decoration: BoxDecoration(
+          color: conColor,
+          borderRadius: BorderRadius.circular(30),
+          boxShadow: [
+            BoxShadow(
+              color: lightColor,
+              offset: Offset(0, 10),
+              blurRadius: 20,
+            )
+          ]),
+      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+      width: size.width * 0.9,
       child: TextField(
         cursorColor: color,
         onChanged: onChanged,
